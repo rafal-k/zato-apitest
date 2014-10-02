@@ -135,6 +135,11 @@ def then_json_pointer_is_an_integer(ctx, path, value):
 def then_json_pointer_is_a_float(ctx, path, value):
     return assert_value(ctx, path, value, float)
 
+@then('JSON Pointer "{path}" is a boolean "{value}"')
+@util.obtain_values
+def then_json_pointer_is_a_boolean(ctx, path, value):
+    return assert_value(ctx, path, value, bool)
+
 @then('JSON Pointer "{path}" is a list "{value}"')
 @util.obtain_values
 def then_json_pointer_is_a_list(ctx, path, value):
