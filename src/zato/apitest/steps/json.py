@@ -23,6 +23,9 @@ from datadiff.tools import assert_equals
 # jsonpointer
 from jsonpointer import resolve_pointer as get_pointer, set_pointer as _set_pointer
 
+# validate
+from validate import is_boolean
+
 # Zato
 from .. import util
 from .. import INVALID
@@ -138,7 +141,7 @@ def then_json_pointer_is_a_float(ctx, path, value):
 @then('JSON Pointer "{path}" is a boolean "{value}"')
 @util.obtain_values
 def then_json_pointer_is_a_boolean(ctx, path, value):
-    return assert_value(ctx, path, value, bool)
+    return assert_value(ctx, path, value, is_boolean)
 
 @then('JSON Pointer "{path}" is a list "{value}"')
 @util.obtain_values
